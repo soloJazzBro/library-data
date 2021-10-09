@@ -8,13 +8,13 @@
             <h4>{{message.summary}}</h4>
             <p>{{message.detail}}</p>
         </div>
-        <div class="p-grid p-fluid col-12">
-            <div class="col-6">
-                <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
-            </div>
-            <div class="col-6">
-                <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
-            </div>
+        <div class="p-grid p-fluid" style="justify-content: center;">
+          <div class="">
+            <button type="button" pButton icon="pi pi-times" (click)="onReject()" label="Cancel" class="p-button-secondary" style="width: auto; float: right;"></button>
+          </div>
+          <div class="">
+            <button type="button" pButton icon="pi pi-check" (click)="onConfirm()" label="OK" class="p-button-success" style="width: auto; float: right; margin-right: 10px;"></button>
+          </div>
         </div>
     </div>
   </ng-template>
@@ -28,7 +28,7 @@
         </div>
         <div class="p-grid p-fluid">
             <div class="col-6">
-                <button type="button" pButton (click)="onReject()" label="OK" class="p-button-secondary"></button>
+                <button type="button" pButton (click)="onReject()" label="OK" class="p-button-secondary" style="width: auto; float: right;"></button>
             </div>
         </div>
     </div>
@@ -89,10 +89,33 @@
         Content 3
     </p-tabPanel>
 </p-tabView>
-<p-dialog header="Book" [(visible)]="displayModal" [style]="{width: '50vw'}" [baseZIndex]="10000">
-  <input type="text" pInputText placeholder="Title">
+<p-dialog header="Book" [(visible)]="displayModal" [style]="{width: '30vw'}" [baseZIndex]="10000">
+  <div class="p-fluid p-grid">
+    <div class="p-field p-col-12 p-md-4" style="margin: 20px; display: flex; justify-content: center;">
+      <tr>
+        <td style="padding-right: 20px;">
+          <span class="p-float-label p-col-4">
+            <input type="text" id="inputTitle" pInputText [(ngModel)]="title" style="width: ;" />
+            <label for="inputTitle">Title</label>
+          </span>
+        </td>
+        <td style="padding-right: 20px;">
+          <span class="p-float-label p-col-4">
+            <input type="text" id="inputAuthor" pInputText [(ngModel)]="author"/>
+            <label for="inputAuthor">Author</label>
+          </span>
+        </td>
+        <td style="padding-right: 20px;">
+          <span class="p-float-label p-col-4">
+            <input type="text" id="inputPrice" pInputText [(ngModel)]="price"/>
+            <label for="inputPrice">Price</label>
+          </span>
+        </td>
+      </tr>
+    </div>
+  </div>
   <ng-template pTemplate="footer">
-      <p-button icon="pi pi-save" (click)="displayModal=false" label="Save" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-save" (click)="onClickSave()" label="Save" styleClass="p-button-text"></p-button>
       <p-button icon="pi pi-times" (click)="displayModal=false" label="Cancel"></p-button>
   </ng-template>
 </p-dialog>

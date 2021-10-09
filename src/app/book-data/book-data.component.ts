@@ -15,6 +15,9 @@ export class BookDataComponent implements OnInit {
   cols: any[];
   totalRecords: number;
   displayModal: boolean;
+  title: string;
+  author: string;
+  price: string;
 
   constructor(private messageService: MessageService, private primengConfig: PrimeNGConfig, private bookService: BookService) { 
     this.books = [];
@@ -34,30 +37,36 @@ export class BookDataComponent implements OnInit {
   }
 
   onClickNew(){
-    var asdf = 'asdf';
+    this.title = "";
+    this.author = "";
+    this.price = "";
+    this.displayModal = true;
   }
 
   onClickEdit(){
-    if(this.selectedBook !== undefined){
+    if(this.selectedBook != null){
       this.showEditDialog(this.selectedBook);
     }
     else {
-      this.showConfirm2();
+      this.showConfirm2(false);
     }
   }
 
   onClickDelete(){
-    if(this.selectedBook !== undefined){
+    if(this.selectedBook != null){
       this.showConfirm();
     }
     else {
-      this.showConfirm2();
+      this.showConfirm2(false);
     }
   }
 
   showEditDialog(book: Book){
     if(book !== undefined){
       this.displayModal = true;
+      this.title = book.name;
+      this.author = book.author;
+      this.price = book.price;
     }
   }
 
@@ -67,12 +76,19 @@ export class BookDataComponent implements OnInit {
 
   showConfirm() {
     this.messageService.clear();
-    this.messageService.add({key: 'c', sticky: true, severity:'warn', summary:'Are you sure?', detail:'Confirm to proceed'});
+    this.messageService.add({key: 'c', sticky: true, severity:'warn', summary:'Are you sure?', detail:''});
   }
 
-  showConfirm2() {
-    this.messageService.clear();
-    this.messageService.add({key: 'c2', sticky: true, severity:'info', summary:'Please select a book!'});
+  showConfirm2(isNew: boolean) {
+    if(!isNew){
+      this.messageService.clear();
+      this.messageService.add({key: 'c2', sticky: true, severity:'info', summary:'Please select a book!'});
+    }
+  }
+
+  onClickSave(){
+    this.displayModal = false;
+    this.messageService.add({key: 'br', severity:'success', summary: 'Success', detail: 'Book has been saved :)'});
   }
 
   onConfirm() {
@@ -90,10 +106,12 @@ export class BookDataComponent implements OnInit {
   }
 
   onRowSelect(event) {
+    if(this.selectedBook != null){
       //this.messageService.add({severity:'info', summary:'Book Selected', detail: this.selectedBook.name });
+    }
   }
 
   onRowUnselect(event) {
-      //this.messageService.add({severity:'info', summary:'Book Unselected',  detail: event.rowData.name});
+      this.messageService.add({severity:'info', summary:'Book Unselected',  detail: event.rowData.name});
   }
 }

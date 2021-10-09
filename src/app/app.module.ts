@@ -19,6 +19,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import {ToastModule} from 'primeng/toast';
 import {RippleModule} from 'primeng/ripple';
 import { DialogModule } from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { DialogModule } from 'primeng/dialog';
     SidebarModule,
     ToastModule,
     RippleModule,
-    DialogModule
+    DialogModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
