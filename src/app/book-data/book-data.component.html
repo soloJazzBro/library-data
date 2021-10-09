@@ -1,0 +1,98 @@
+<p-toast></p-toast>
+<p-toast position="bottom-right" key="br"></p-toast>
+<p-toast position="center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 1">
+        <div class="p-text-center" style="text-align: center;">
+            <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+            <h4>{{message.summary}}</h4>
+            <p>{{message.detail}}</p>
+        </div>
+        <div class="p-grid p-fluid col-12">
+            <div class="col-6">
+                <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
+            </div>
+            <div class="col-6">
+                <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+</p-toast>
+<p-toast position="center" key="c2" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 1">
+        <div class="p-text-center" style="text-align: center;">
+            <i class="pi pi-info-circle" style="font-size: 3rem"></i>
+            <h4>{{message.summary}}</h4>
+        </div>
+        <div class="p-grid p-fluid">
+            <div class="col-6">
+                <button type="button" pButton (click)="onReject()" label="OK" class="p-button-secondary"></button>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+</p-toast>
+<app-toolbar></app-toolbar>
+<p-tabView>
+    <p-tabPanel header="Books">
+      <p-table #dt 
+        [columns]="cols" 
+        [value]="books" 
+        [paginator]="true" 
+        [rows]="10" 
+        [rowsPerPageOptions]="[5,10,15,20]"
+        [totalRecords]="totalRecords" 
+        [pageLinks]="3" 
+        [globalFilterFields]="cols" 
+        selectionMode="single" 
+        [(selection)]="selectedBook" 
+        dataKey="name">
+        <ng-template pTemplate="caption">
+          
+          <p-menubar >
+            <ng-template pTemplate="start">
+                <!--<img src="assets/showcase/images/primeng.svg" height="40" class="p-mr-2">-->
+                <span class="p-buttonset">
+                  <button pButton pRipple (click)="onClickNew()" label="New" icon="pi pi-fw pi-plus" style="margin-right: 2px;"></button>
+                  <button pButton pRipple (click)="onClickEdit()" label="Edit" icon="pi pi-fw pi-pencil" style="margin-right: 2px;"></button>
+                  <button pButton pRipple (click)="onClickDelete()" label="Delete" icon="pi pi-trash" style="margin-right: 2px;"></button>
+                </span>
+            </ng-template>
+            <ng-template pTemplate="end">
+              <i class="pi pi-search" style="margin:0 4px 0 0"></i>
+              <input type="text" pInputText placeholder="Search..." (input)="dt.filterGlobal($event.target.value, 'contains')">
+            </ng-template>
+          </p-menubar>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr [pSelectableRow]="rowData" (click)="onRowSelect($event)">
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+    <p-tabPanel header="Tab 2">
+        Content 2
+    </p-tabPanel>
+    <p-tabPanel header="Tab 3">
+        Content 3
+    </p-tabPanel>
+</p-tabView>
+<p-dialog header="Book" [(visible)]="displayModal" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <input type="text" pInputText placeholder="Title">
+  <ng-template pTemplate="footer">
+      <p-button icon="pi pi-save" (click)="displayModal=false" label="Save" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-times" (click)="displayModal=false" label="Cancel"></p-button>
+  </ng-template>
+</p-dialog>

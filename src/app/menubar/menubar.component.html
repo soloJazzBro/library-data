@@ -1,0 +1,16 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <!--<img src="assets/showcase/images/primeng.svg" height="40" class="p-mr-2">-->
+    </ng-template>
+    <ng-template pTemplate="end">
+        <!--<input type="text" pInputText placeholder="Search">-->
+        <!--
+          <div style="text-align: right">
+              <i class="pi pi-search" style="margin:0 4px 0 0"></i>
+              <input type="text" pInputText placeholder="Search..." (input)="dt.filterGlobal($event.target.value, 'contains')">
+          </div>
+          -->
+          <i class="pi pi-search" style="margin:0 4px 0 0"></i>
+              <input type="text" pInputText placeholder="Search..." (input)="dt.filterGlobal($event.target.value, 'contains')">
+    </ng-template>
+</p-menubar>

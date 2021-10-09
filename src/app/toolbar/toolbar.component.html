@@ -1,0 +1,15 @@
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+    <!--
+    <h1 style="font-weight:normal">Left Sidebar</h1>
+    <p-button type="button" (click)="visibleSidebar1 = false" label="Save" styleClass="p-button-success"></p-button>
+    <p-button type="button" (click)="visibleSidebar1 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+    -->
+</p-sidebar>
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+        <p-button icon="pi pi-bars" styleClass="p-button p-button-primary" (click)="visibleSidebar1 = true"></p-button>
+    </div>
+    <div class="p-toolbar-group-right">
+        <p-splitButton label="Bookmarks" icon="pi pi-bookmark" [model]="items" styleClass="p-button-rounded p-button-warning"></p-splitButton>
+    </div>
+</p-toolbar>
