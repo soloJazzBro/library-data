@@ -2265,33 +2265,25 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
   background: #1f2d40;
   color: rgba(255, 255, 255, 0.87);
   border: 1px solid #304562;
-  border-width: 1px 1px 1px 1px;
+  border-width: 0 0 1px 0;
   padding: 1rem 1rem;
   font-weight: 600;
 }
 .p-datatable .p-datatable-thead > tr > th {
-  height: 36px;
   text-align: left;
   padding: 1rem 1rem;
   border: 1px solid #304562;
-  border-width: 1px 1px 1px 1px;
+  border-width: 0 0 1px 0;
   font-weight: 600;
-  color: rgba(119, 180, 240);
-  background: rgba(25, 33, 46);
+  color: rgba(255, 255, 255, 0.87);
+  background: #1f2d40;
   transition: box-shadow 0.2s;
 }
-
-::ng-deep p-datatable-table > .p-element.p-selectable-row.ng-star-inserted {
-  height: 36px !important;
-  min-height: 36px !important;
-  max-height: 36px !important;
-}
 .p-datatable .p-datatable-tfoot > tr > td {
-  height: 36px;
   text-align: left;
   padding: 1rem 1rem;
   border: 1px solid #304562;
-  border-width: 1px 1px 1px 1px;
+  border-width: 0 0 1px 0;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.87);
   background: #1f2d40;
@@ -2343,7 +2335,7 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
 .p-datatable .p-datatable-tbody > tr > td {
   text-align: left;
   border: 1px solid #304562;
-  border-width: 1px 1px 1px 1px;
+  border-width: 0 0 1px 0;
   padding: 1rem 1rem;
 }
 .p-datatable .p-datatable-tbody > tr > td .p-row-toggler,
@@ -5654,17 +5646,4 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
 }
 .p-galleria.p-galleria-indicator-onitem .p-galleria-indicators .p-galleria-indicator.p-highlight button {
   background: #64B5F6;
-}
-
-
-
-body{
-  background: rgb(24, 30, 41);
-  padding: 2px 2px 2px 2px !important;
-}
-.p-datatable .p-datatable-tbody > tr.p-highlight,
-.p-ripple.p-element.p-paginator-page.p-paginator-element.p-link.p-highlight.ng-star-inserted,
-.p-ripple.p-element.p-dropdown-item.p-highlight{
-  background: #37a6ad !important;
-  color: #ffff !important;
 }

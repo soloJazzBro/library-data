@@ -35,8 +35,8 @@
   </ng-template>
 </p-toast>
 <app-toolbar></app-toolbar>
-<p-tabView>
-    <p-tabPanel header="Books">
+<p-tabView [activeIndex]="0">
+    <p-tabPanel header="Books" [selected]="true">
       <p-table #dt 
         [columns]="cols" 
         [value]="books" 

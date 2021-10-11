@@ -38,6 +38,16 @@
                 "bundleName": "dark",
                 "inject": false
               },
+              {
+                "input": "src/assets/styles/nova-accent.css",
+                "bundleName": "nova-accent",
+                "inject": false
+              },
+              {
+                "input": "src/assets/styles/vela-blue.css",
+                "bundleName": "vela-blue",
+                "inject": false
+              },
               "./node_modules/primeicons/primeicons.css",
               "./node_modules/primeng/resources/primeng.min.css"
             ],
