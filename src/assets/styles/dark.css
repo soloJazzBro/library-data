@@ -5668,3 +5668,11 @@ body{
   background: #37a6ad !important;
   color: #ffff !important;
 }
+.p-toast .p-toast-message.p-toast-message-success {
+  background: #37a6ad !important;
+  color: #ffff !important;
+}
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon,
+.p-toast .p-toast-message.p-toast-message-success .p-toast-icon-close {
+  color: #ffff;
+}
