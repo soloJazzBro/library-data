@@ -5662,3 +5662,15 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
   background: #37a6ad !important;
   color: #ffff !important;
 }
+.p-toast .p-toast-message.p-toast-message-success {
+  background: #37a6ad !important;
+  color: #ffff !important;
+}
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon,
+.p-toast .p-toast-message.p-toast-message-success .p-toast-icon-close {
+  color: #ffff;
+}
+.p-paginator-bottom.p-paginator.p-component.ng-star-inserted{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
