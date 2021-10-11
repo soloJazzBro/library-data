@@ -5628,3 +5628,37 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
 }
 
 /* Customizations to the designer theme should be defined here */
+.p-toolbar.p-component, 
+.p-ripple.p-element.p-tabview-nav-link{
+  background: rgb(83,118,162) !important;
+  border-color: rgb(83,118,162) !important;
+}
+.p-tabview-panels,
+.p-tabview-nav-link{
+  border-color: rgb(83,118,162) !important;
+}
+.p-ripple.p-element.p-tabview-nav-link:hover{
+  color: #333333 !important;
+  background: #eaeaea !important;
+  border-color: #eaeaea !important;
+}
+.p-element.p-splitbutton-defaultbutton.p-button.p-component, 
+.p-element.p-splitbutton-menubutton.p-button.p-component.p-button-icon-only,
+.p-ripple.p-element.p-button.p-button-primary.p-component.p-button-icon-only,
+.p-element.p-ripple.p-button.p-component,
+.p-dialog-header{
+  background: rgb(83,118,162) !important;
+  border-color: rgb(83,118,162) !important;
+}
+.p-ripple.p-element.p-button-text.p-button.p-component{
+  background: #ffff !important;
+  color: rgb(83,118,162) !important;
+  border-color: rgb(83,118,162) !important;
+  border: 1px 1px 1px 1px !important;
+}
+.p-datatable .p-datatable-tbody > tr.p-highlight,
+.p-ripple.p-element.p-paginator-page.p-paginator-element.p-link.p-highlight.ng-star-inserted,
+.p-ripple.p-element.p-dropdown-item.p-highlight{
+  background: #37a6ad !important;
+  color: #ffff !important;
+}
