@@ -27,7 +27,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "src/assets/styles/light.css",
+                "bundleName": "light",
+                "inject": false
+              },
+              {
+                "input": "src/assets/styles/dark.css",
+                "bundleName": "dark",
+                "inject": false
+              },
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -98,6 +110,10 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

@@ -1,0 +1,121 @@
+<p-toast></p-toast>
+<p-toast position="bottom-right" key="br"></p-toast>
+<p-toast position="center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 1">
+        <div class="p-text-center" style="text-align: center;">
+            <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+            <h4>{{message.summary}}</h4>
+            <p>{{message.detail}}</p>
+        </div>
+        <div class="p-grid p-fluid" style="justify-content: center;">
+          <div class="">
+            <button type="button" pButton icon="pi pi-times" (click)="onReject()" label="Cancel" class="p-button-secondary" style="width: auto; float: right;"></button>
+          </div>
+          <div class="">
+            <button type="button" pButton icon="pi pi-check" (click)="onConfirm()" label="OK" class="p-button-success" style="width: auto; float: right; margin-right: 10px;"></button>
+          </div>
+        </div>
+    </div>
+  </ng-template>
+</p-toast>
+<p-toast position="center" key="c2" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 1">
+        <div class="p-text-center" style="text-align: center;">
+            <i class="pi pi-info-circle" style="font-size: 3rem"></i>
+            <h4>{{message.summary}}</h4>
+        </div>
+        <div class="p-grid p-fluid">
+            <div class="col-6">
+                <button type="button" pButton (click)="onReject()" label="OK" class="p-button-secondary" style="width: auto; float: right;"></button>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+</p-toast>
+<app-toolbar></app-toolbar>
+<p-tabView>
+    <p-tabPanel header="Books">
+      <p-table #dt 
+        [columns]="cols" 
+        [value]="books" 
+        [paginator]="true" 
+        [rows]="10" 
+        [rowsPerPageOptions]="[5,10,15,20]"
+        [totalRecords]="totalRecords" 
+        [pageLinks]="3" 
+        [globalFilterFields]="cols" 
+        selectionMode="single" 
+        [(selection)]="selectedBook" 
+        dataKey="name">
+        <ng-template pTemplate="caption">
+          
+          <p-menubar >
+            <ng-template pTemplate="start">
+                <!--<img src="assets/showcase/images/primeng.svg" height="40" class="p-mr-2">-->
+                <span class="p-buttonset">
+                  <button pButton pRipple (click)="onClickNew()" label="New" icon="pi pi-fw pi-plus" style="margin-right: 2px;"></button>
+                  <button pButton pRipple (click)="onClickEdit()" label="Edit" icon="pi pi-fw pi-pencil" style="margin-right: 2px;"></button>
+                  <button pButton pRipple (click)="onClickDelete()" label="Delete" icon="pi pi-trash" style="margin-right: 2px;"></button>
+                </span>
+            </ng-template>
+            <ng-template pTemplate="end">
+              <i class="pi pi-search" style="margin:0 4px 0 0"></i>
+              <input type="text" pInputText placeholder="Search..." (input)="dt.filterGlobal($event.target.value, 'contains')">
+            </ng-template>
+          </p-menubar>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr [pSelectableRow]="rowData" (click)="onRowSelect($event)">
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+    <p-tabPanel header="Tab 2">
+        <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</i></p>
+    </p-tabPanel>
+    <p-tabPanel header="Tab 3">
+        <p><i>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</i></p>
+    </p-tabPanel>
+</p-tabView>
+<p-dialog header="Book" [(visible)]="displayModal" [style]="{width: '30vw'}" [baseZIndex]="10000">
+  <div class="p-fluid p-grid">
+    <div class="p-field p-col-12 p-md-4" style="margin: 20px; display: flex; justify-content: center;">
+      <tr>
+        <td style="padding-right: 20px;">
+          <span class="p-float-label p-col-4">
+            <input type="text" id="inputTitle" pInputText [(ngModel)]="title" style="width: ;" />
+            <label for="inputTitle">Title</label>
+          </span>
+        </td>
+        <td style="padding-right: 20px;">
+          <span class="p-float-label p-col-4">
+            <input type="text" id="inputAuthor" pInputText [(ngModel)]="author"/>
+            <label for="inputAuthor">Author</label>
+          </span>
+        </td>
+        <td style="padding-right: 20px;">
+          <span class="p-float-label p-col-4">
+            <input type="text" id="inputPrice" pInputText [(ngModel)]="price"/>
+            <label for="inputPrice">Price</label>
+          </span>
+        </td>
+      </tr>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+      <p-button icon="pi pi-save" (click)="onClickSave()" label="Save" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-times" (click)="displayModal=false" label="Cancel"></p-button>
+  </ng-template>
+</p-dialog>

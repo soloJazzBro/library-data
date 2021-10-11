@@ -1,0 +1,21 @@
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+    <h3>Options</h3>
+    <p-divider></p-divider>
+    <h5>Theme</h5>
+    <div class="p-field-radiobutton">
+        <p-radioButton name="theme" value="light" (ngModelChange)="onChangeTheme($event)" [(ngModel)]="themeOption" inputId="theme1"></p-radioButton>
+        <label for="theme1">Light Mode</label>
+    </div>
+    <div class="p-field-radiobutton">
+        <p-radioButton name="theme" value="dark" (ngModelChange)="onChangeTheme($event)" [(ngModel)]="themeOption" inputId="theme2"></p-radioButton>
+        <label for="theme2">Dark Mode</label>
+    </div>
+</p-sidebar>
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+        <p-button icon="pi pi-bars" styleClass="p-button p-button-primary" (click)="visibleSidebar1 = true"></p-button>
+    </div>
+    <div class="p-toolbar-group-right">
+        <p-splitButton label="Bookmarks" icon="pi pi-bookmark" [model]="items" styleClass="p-button-rounded p-button-primary"></p-splitButton>
+    </div>
+</p-toolbar>

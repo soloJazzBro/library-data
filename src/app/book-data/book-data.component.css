@@ -1,0 +1,27 @@
+::ng-deep .p-tabview.p-component {
+    margin-top: 8px !important;
+}
+
+::ng-deep .p-datatable .p-datatable-header{
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+::ng-deep .p-menubar.p-component{
+    border: 1px 1px 0 1px;
+    margin-bottom: 8px;
+}
+
+::ng-deep p-table > .p-datatable-tbody > tr {
+    height: 36px !important;
+}
+
+::ng-deep .p-menubar.p-component{
+    border: 0;
+    padding: 0;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li, .p-element.p-ripple.p-button.p-component {
+    margin-right: 4px !important;
+}

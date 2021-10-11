@@ -1,0 +1,9 @@
+.p-field-checkbox, .p-field-radiobutton {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.p-field-radiobutton > label {
+    margin-left: 8px;
+}
