@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService, Book } from '../service/book.service';
-import {MenuItem} from 'primeng/api';
 import {MessageService} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
+import { ThemeService } from '../service/theme.service';
+
 @Component({
   selector: 'app-book-data',
   templateUrl: './book-data.component.html',
@@ -18,8 +19,17 @@ export class BookDataComponent implements OnInit {
   title: string;
   author: string;
   price: string;
-  constructor(private messageService: MessageService, private primengConfig: PrimeNGConfig, private bookService: BookService) { 
+  themeOption: any;
+  constructor(
+    private messageService: MessageService, 
+    private primengConfig: PrimeNGConfig, 
+    private bookService: BookService,
+    private themeService: ThemeService) { 
     this.books = [];
+    let themeOption = localStorage.getItem('themeOption');
+    themeOption = themeOption != null && themeOption != undefined ? themeOption : 'light';
+    this.themeOption = themeOption;
+    this.themeService.switchTheme(themeOption);
   }
 
   ngOnInit() {

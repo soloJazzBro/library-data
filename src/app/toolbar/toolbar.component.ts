@@ -11,12 +11,12 @@ export class ToolbarComponent implements OnInit {
   items: MenuItem[];
   theme: string;
   themeOption: any;
-  constructor(private themeService: ThemeService) { }
+  constructor(private themeService: ThemeService) {}
 
     ngOnInit() {
         let themeOption = localStorage.getItem('themeOption');
         themeOption = themeOption != null && themeOption != undefined ? themeOption : 'light';
-        this.themeOption = 'light';
+        this.themeOption = themeOption;
         this.items = [
             {
                 label: 'New',
