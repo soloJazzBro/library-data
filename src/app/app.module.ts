@@ -22,6 +22,10 @@ import { DialogModule } from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { DividerModule } from "primeng/divider";
+import { AccordionModule } from 'primeng/accordion';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
+import { GridsterModule } from 'angular-gridster2';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +52,10 @@ import { DividerModule } from "primeng/divider";
     DialogModule,
     InputTextModule,
     RadioButtonModule,
-    DividerModule
+    DividerModule,
+    AccordionModule,
+    ScrollPanelModule,
+    GridsterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

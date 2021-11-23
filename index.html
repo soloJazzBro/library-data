@@ -2,13 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>LibraryData</title>
-  <base href="/">
+  <title>PrimeNG Demo</title>
+  <base href="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link id="app-theme" rel="stylesheet" type="text/css" href="light.css">
+  
 </head>
 <body>
   <app-root></app-root>
+  <script type="text/javascript">
+    var ecobarLocalConfig = {
+            "app_id": "sfuxus0170105",
+            "network": {
+                "trackAnalytics" : "false",
+                "mapLinkUrls": "https://www.google.com/maps/@38.7588096%2C-77.1923968%2C15z",    // substituted %2C for commas in url
+                "mapLinkTitles": "NGA at NCE",
+                "searchLinkUrls": "https://www.bing.com, https://www.google.com/",
+                "searchLinkTitles": "Bing, Google",
+                "feedbackLinkUrls": "https://www.nga.mil/About/Pages/Contact.aspx, mailto:webmaster@nga.mil",
+                "feedbackLinkTitles": "Contact NGA, E-mail NGA"
+            },
+            "ui": {
+                "zIndex": "3030",    // note: string for boolean and numeric values is preferred
+                "hideClassificationWarning": "true",
+                "appendFooterToSelector": "#bottom",
+                "hideFooter": "false"
+            }
+        };
+
+    window.ecobarApp && ecobarApp.init(ecobarLocalConfig);
+</script>
 </body>
 </html>

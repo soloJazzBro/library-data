@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "ajv": "^8.6.3",
+    "angular-gridster2": "^13.0.0",
     "primeicons": "^4.1.0",
     "primeng": "^12.2.0-rc.1",
     "rxjs": "~6.6.0",
