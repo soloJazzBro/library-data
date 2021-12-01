@@ -36,7 +36,13 @@ export class BookDataComponent implements OnInit {
     @Inject(DOCUMENT) private _document) { 
     this.books = [];
   }
+  static itemChange(item, itemComponent) {
+    console.info('itemChanged', item, itemComponent);
+  }
 
+  static itemResize(item, itemComponent) {
+    console.info('itemResized', item, itemComponent);
+  }
   ngOnInit() {
       this.primengConfig.ripple = true;
       this.bookService.getBooks().
@@ -54,7 +60,7 @@ export class BookDataComponent implements OnInit {
         },
         swap: false,
         pushItems: true,
-        maxCols: 4
+        maxCols: 4,
       }
       this.gridsterItemArray = [
         {cols: 2, rows: 1, y: 0, x: 0},

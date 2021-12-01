@@ -120,30 +120,6 @@
         </p-accordionTab>
     </p-accordion>
     </p-tabPanel>
-    <!--
-    <p-tabPanel header="Grids">
-      
-      <gridster [options]="gridsterConfig">
-        <gridster-item [item]="item" *ngFor="let item of gridsterItemArray">
-          <gridster-item>
-            <div (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">
-              Some content to click without dragging the widget
-            </div>
-            <div class="item-buttons">
-              <button class="drag-handler">
-                open_with
-              </button>
-              <button class="remove-button" (click)="removeItem($event, item)"
-                      (touchstart)="removeItem($event, item)">
-                clear
-              </button>
-            </div>
-         </gridster-item>
-        </gridster-item>
-      </gridster>
-    
-    </p-tabPanel>
-    -->
 </p-tabView>
 <p-dialog header="Book" [(visible)]="displayModal" [style]="{width: '30vw'}" [baseZIndex]="10000">
   <div class="p-fluid p-grid">

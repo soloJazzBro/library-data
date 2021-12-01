@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import { DividerModule } from "primeng/divider";
 import { AccordionModule } from 'primeng/accordion';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import { GridsterModule } from 'angular-gridster2';
+import { EcobarComponent } from './ecobar/ecobar.component';
+import { EcobarFooterComponent } from './ecobar-footer/ecobar-footer.component';
 
 
 @NgModule({
@@ -33,6 +36,8 @@ import { GridsterModule } from 'angular-gridster2';
     BookDataComponent,
     ToolbarComponent,
     MenubarComponent,
+    EcobarComponent,
+    EcobarFooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,22 @@ import { GridsterModule } from 'angular-gridster2';
     GridsterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    EcobarComponent, 
+    EcobarFooterComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {
+  
+  constructor(private injector: Injector) {
+
+    const ecobar = createCustomElement(EcobarComponent, { injector });
+    customElements.define('my-ecobar', ecobar);
+
+    const ecobarFooter = createCustomElement(EcobarFooterComponent, { injector });
+    customElements.define('my-ecobar-footer', ecobarFooter);
+  }
+
+  ngDoBootstrap() {}
+}

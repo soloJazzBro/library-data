@@ -1,5 +1,6 @@
 body{
   padding: 2px 2px 2px 2px !important;
+  margin-top: 5px !important;
 }
 :root {
   --surface-a: #ffffff;
@@ -5811,9 +5812,11 @@ button.p-sidebar-close:hover {
   border-color: transparent !important;
   border: 1px 1px 1px 1px !important;
 }
+/*
 .p-buttonset .p-element.p-ripple.p-button.p-component{
   border: 1px 1px 1px 1px !important;
 }
+*/
 .p-buttonset .p-button:not(:last-child) {
   border-right: 1px solid !important;
 }
@@ -5964,6 +5967,7 @@ input.p-inputtext{
   background: var(--nga-accent-alt) !important;
   color: var(--nga-white) !important;
 }
+
 /* Toast alerts */
 
 .p-toast .p-toast-message.p-toast-message-success {
