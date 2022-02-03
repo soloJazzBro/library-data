@@ -31,43 +31,39 @@ import { EcobarFooterComponent } from './ecobar-footer/ecobar-footer.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookDataComponent,
-    ToolbarComponent,
-    MenubarComponent,
-    EcobarComponent,
-    EcobarFooterComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    TableModule,
-    FormsModule,
-    HttpClientModule,
-    ToolbarModule,
-    ButtonModule,
-    SplitButtonModule,
-    TabViewModule,
-    MenubarModule,
-    SidebarModule,
-    ToastModule,
-    RippleModule,
-    DialogModule,
-    InputTextModule,
-    RadioButtonModule,
-    DividerModule,
-    AccordionModule,
-    ScrollPanelModule,
-    GridsterModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    EcobarComponent, 
-    EcobarFooterComponent
-  ]
+    declarations: [
+        AppComponent,
+        BookDataComponent,
+        ToolbarComponent,
+        MenubarComponent,
+        EcobarComponent,
+        EcobarFooterComponent,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        TableModule,
+        FormsModule,
+        HttpClientModule,
+        ToolbarModule,
+        ButtonModule,
+        SplitButtonModule,
+        TabViewModule,
+        MenubarModule,
+        SidebarModule,
+        ToastModule,
+        RippleModule,
+        DialogModule,
+        InputTextModule,
+        RadioButtonModule,
+        DividerModule,
+        AccordionModule,
+        ScrollPanelModule,
+        GridsterModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
   
