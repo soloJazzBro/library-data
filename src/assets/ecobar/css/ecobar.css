@@ -7,6 +7,7 @@ body {position:absolute; width:100%; height:auto; margin:0; overflow-y:auto; top
 	margin:0; padding: 0; border:0; font:inherit; vertical-align:baseline; box-sizing:border-box;}
 
 #ecobar article, #ecobar aside, #ecobar details, #ecobar figcaption, #ecobar figure, #ecobar-footer, #ecobar header, #ecobar menu, #ecobar nav, #ecobar section, #ecobar main {display:block;}
+
 #ecobar {position:absolute; top:0; left:0; height:0; width:100%; overflow:hidden; display:block;}
 #ecobar ul {list-style:none; list-style-type:none; font-size:10px; font-family:Helvetica,Arial,sans-serif; padding-top:0;}
 #ecobar ul.is-error > li {padding-top:2em;text-align:center; font-size:14px;}

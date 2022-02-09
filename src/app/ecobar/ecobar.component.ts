@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation  } from '@angular/core';
-import 'src/assets/ecobar/dist/ecobar.min.js';
-//import ecobarEnvSettings from 'src/assets/ecobar/dist/ecobar-env-settings.min.json';
+import 'src/assets/ecobar/dist/ecobar.js';
+import config from 'src/assets/ecobar/dist/ecobar-env-settings.json';
 
 declare var ecobarApp: any;
 
@@ -13,7 +13,7 @@ declare var ecobarApp: any;
 export class EcobarComponent {
 
   ngOnInit(){
-    //const config = ecobarEnvSettings;
-    ecobarApp.init();
+    
+    ecobarApp.init(config);
   }
 }

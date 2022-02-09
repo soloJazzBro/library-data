@@ -1,6 +1,7 @@
 body{
   padding: 2px 2px 2px 2px !important;
   margin-top: 5px !important;
+  margin-bottom: 5px !important;
 }
 :root {
   --surface-a: #ffffff;
